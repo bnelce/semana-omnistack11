@@ -4,12 +4,12 @@ import logoImg from '../../assets/logo.svg';
 
 import { FiArrowLeft } from 'react-icons/fi';
 
-//import api from '../../services/api';
+import api from '../../services/api';
 
 import './styles.css';
 
 export default function NewIncident() {
-  /*  const [title, setTitle] = useState('');
+    const [title, setTitle] = useState('');
     const [description,setDescription] = useState('');
     const [value, setValue] = useState('');
 
@@ -37,7 +37,7 @@ export default function NewIncident() {
         } catch {
             alert('Erro ao cadastrar caso, tente novamente');
         }
-    }*/
+    }
  
     return(
         <div className="new-incident-container">
@@ -53,22 +53,22 @@ export default function NewIncident() {
                     Voltar para home
                 </Link>
             </section>
-            <form onSubmit ="">
+            <form onSubmit = {handleSubmit}>
                 <input 
                 placeholder="Titulo do caso"
-                value=""
-                onChange=""/>
+                value= { title }
+                onChange= {e => setTitle(e.target.value)}/>
                
                 <textarea 
                 placeholder="Descrição"
-                value=""
-                onChange="" 
+                value={ description }
+                onChange= {e => setDescription(e.target.value)}
                 />
 
                 <input
                  placeholder="Valor em reais"
-                 value=""
-                 onChange =""/>
+                 value={value}
+                 onChange = {e => setValue(e.target.value)}/>
 
                 <button className="button" type="submit">Registrar</button>
             </form>
